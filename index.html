@@ -333,31 +333,28 @@
                     </div>
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-sm-6">
                     <!-- <label for="address" class="form-label">Address</label> -->
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="customerAddress"
-                        placeholder="Address"
-                        required />
-                      <!-- <input
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="customerAddress"
+                      placeholder="Address"
+                      required />
+                    <!-- <input
                         type="text"
                         class="form-control"
                         id="customerCity"
                         placeholder="Town / City"
                         required /> -->
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="customerZip"
-                        placeholder="GST"
-                        required />
-                    </div>
-                    <div class="invalid-feedback">
-                      Please enter your shipping address.
-                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="customerZip"
+                      placeholder="GST"
+                      required />
                   </div>
 
                   <div class="col-md-12 text-center mt-3">
@@ -613,7 +610,7 @@
             "due-date": getDueDate(),
           },
           products: cart,
-          "bottom-notice": "Kindly pay your invoice within 15 days.",
+          "bottom-notice": "We appreciate your business and thank you for choosing Pavitra Sarees.",
           settings: {
             currency: "INR", // See documentation 'Locales and Currency' for more info. Leave empty for no currency.
             // "locale": "nl-NL", // Defaults to en-US, used for number formatting (see docs)
