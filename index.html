@@ -636,6 +636,17 @@
           openCustomerForm();
         };
 
+        if (cart.length > 0) {
+          document.getElementById(
+            "addCustomer"
+          ).innerHTML = `Next <i class="bi bi-arrow-bar-right"></i>`;
+          document.getElementById("addCustomer").onclick = function () {
+            openCustomerForm();
+          };
+        } else {
+          document.getElementById("addCustomer").classList.add("d-none");
+        }
+
         document.getElementById("product").reset();
       }
 
