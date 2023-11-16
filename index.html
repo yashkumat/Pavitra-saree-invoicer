@@ -65,7 +65,7 @@
         }
         #pdf canvas {
           border: 1px solid black;
-          width: 95%;
+          width: 100%;
         }
       }
 
@@ -694,7 +694,7 @@
       // get Clent details
       function getClient() {
         customer.company = document.getElementById("customerName").value;
-        customer.city = document.getElementById("customerGST").value;
+        customer.city = document.getElementById("customerGST").value.toUpperCase();
         customer["custom1"] = document.getElementById("customerNumber").value;
         customer.address = document.getElementById("customerAddress").value;
 
