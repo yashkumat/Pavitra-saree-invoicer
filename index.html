@@ -758,10 +758,10 @@
 
       // Get client details
       function getClient() {
-        customer.name = document.getElementById("customerName").value || "Customer";
+        customer.name = document.getElementById("customerName").value.toUpperCase() || "Customer";
         customer.phone = document.getElementById("customerNumber").value || "N/A";
-        customer.address = document.getElementById("customerAddress").value || "N/A";
-        customer.gst = document.getElementById("customerGST").value || "N/A";
+        customer.address = document.getElementById("customerAddress").value.toUpperCase() || "N/A";
+        customer.gst = document.getElementById("customerGST").value.toUpperCase() || "N/A";
         return customer;
       }
 
@@ -817,7 +817,7 @@
           <div class="invoice-preview p-4">
             <div class="invoice-header text-center">
               <h2>PAVITRA SAREES</h2>
-              <p>M. G. Road, Ghoti | GST: 27AOUPK8657H3ZI | Phone: 9226331577</p>
+              <p>M. G. Road, Ghoti (MH - 422402) | GST: 27AOUPK8657H3ZI | Phone: 9226331577</p>
             </div>
             
             <div class="invoice-details row">
@@ -832,7 +832,6 @@
                 <h5>Invoice Details:</h5>
                 <p>Invoice No: ${getBillNumber()}<br>
                 Date: ${getDate()}<br>
-                Due Date: ${getDueDate()}</p>
               </div>
             </div>
             
@@ -852,8 +851,6 @@
             </table>
             
             <div class="total-section">
-              <p>Sub Total: Rs. ${total.toFixed(2)}</p>
-              <p>GST (0%): Rs. 0.00</p>
               <h4>Grand Total: Rs. ${total.toFixed(2)}</h4>
             </div>
             
@@ -907,7 +904,7 @@
         doc.setFontSize(10);
         doc.text(`Invoice No: ${getBillNumber()}`, pageWidth - 60, yPos + 7);
         doc.text(`Date: ${getDate()}`, pageWidth - 60, yPos + 14);
-        doc.text(`Due Date: ${getDueDate()}`, pageWidth - 60, yPos + 21);
+        // doc.text(`Due Date: ${getDueDate()}`, pageWidth - 60, yPos + 21);
         
         yPos += 40;
         
@@ -940,10 +937,10 @@
         
         yPos = doc.lastAutoTable.finalY + 10;
         
-        // Totals
-        doc.setFontSize(10);
-        doc.text(`Sub Total: Rs. ${total.toFixed(2)}`, pageWidth - 60, yPos);
-        doc.text(`GST (0%): Rs. 0.00`, pageWidth - 60, yPos + 7);
+        // // Totals
+        // doc.setFontSize(10);
+        // doc.text(`Sub Total: Rs. ${total.toFixed(2)}`, pageWidth - 60, yPos);
+        // doc.text(`GST (0%): Rs. 0.00`, pageWidth - 60, yPos + 7);
         doc.setFontSize(12);
         doc.text(`Grand Total: Rs. ${total.toFixed(2)}`, pageWidth - 60, yPos + 14);
         
@@ -980,7 +977,7 @@
         let hour = today.getHours();
         let minutes = today.getMinutes();
         let seconds = today.getSeconds();
-        return `INV-${hour}${minutes}${seconds}`;
+        return `PS26-${hour}${minutes}${seconds}`;
       }
     </script>
     <script src="bootstrap.bundle.min.js"></script>
